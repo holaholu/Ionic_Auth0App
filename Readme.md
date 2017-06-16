@@ -1,0 +1,1 @@
+#Simple Ionic app using Auth0 authorization

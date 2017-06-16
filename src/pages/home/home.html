@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>IOAuthApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <hr>
+  <div *ngIf="!auth.authenticated()">
+    <h2>Welcome</h2>
+    <p>Please log in to see profile info</p>
+  </div>
+
+  <div *ngIf="auth.authenticated()">
+    <h2 *ngIf="profile">{{profile.nickname}}'s Profile</h2>
+    <ion-list *ngIf="profile">
+      <li ion-item>Email: {{profile.email}}</li>
+      <li ion-item>Last Updated: {{profile.updated_at}}</li>
+    </ion-list>
+  </div>
+</ion-content>
